@@ -1,0 +1,9 @@
+.git*
+.idea/
+.vscode/
+cmake-build-*/
+.editorconfig
+docker-compose.yml
+Makefile
+*.md
+images/

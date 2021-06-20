@@ -1,0 +1,11 @@
+*               text=auto
+*.yml           text
+Dockerfile      text
+Makefile        text eol=lf
+sshd_config     text eol=lf
+*.md            text diff=markdown
+*.png           binary
+.dockerignore   text
+.editorconfig   text
+.gitattributes  text export-ignore
+.gitignore      text export-ignore

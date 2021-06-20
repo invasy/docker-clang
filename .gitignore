@@ -1,0 +1,15 @@
+.idea/
+.idea_modules/
+.vscode/
+cmake-build-*/
+*.iws
+*.swp
+*~
+*.bz2
+*.gz
+*.xz
+*.zip
+*.tbz2
+*.tgz
+*.txz
+*.tar.*

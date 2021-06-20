@@ -1,0 +1,28 @@
+Port 22
+AddressFamily any
+ListenAddress 0.0.0.0
+SyslogFacility AUTH
+LogLevel ERROR
+LoginGraceTime 1m
+PermitRootLogin no
+MaxAuthTries 2
+MaxSessions 8
+PubkeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized_keys
+PasswordAuthentication yes
+PermitEmptyPasswords no
+ChallengeResponseAuthentication no
+UsePAM yes
+AllowAgentForwarding no
+AllowTcpForwarding no
+X11Forwarding no
+PermitTTY yes
+PrintMotd no
+PrintLastLog no
+TCPKeepAlive yes
+Compression no
+ClientAliveInterval 60
+ClientAliveCountMax 10000
+PermitUserEnvironment yes
+AcceptEnv LANG LC_*
+Subsystem sftp /usr/lib/openssh/sftp-server

@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  clang_remote:
+    image: invasy/clang-remote:latest
+    build:
+      context: .
+    cap_add:
+    - sys_ptrace
+    container_name: clang_remote
+    ports:
+    - "127.0.0.1:22001:22"
+    restart: unless-stopped
