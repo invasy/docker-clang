@@ -4,7 +4,7 @@ LABEL maintainer="Vasiliy Polyakov <docker@invasy.dev>"
 
 ARG UBUNTU_VERSION="focal"
 ARG CLANG_VERSION="13"
-ARG CMAKE_VERSION="3.21.2"
+ARG CMAKE_VERSION="3.20.5"
 ARG NINJA_VERSION="1.10.2"
 
 RUN set -eu; \

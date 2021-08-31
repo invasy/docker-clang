@@ -10,13 +10,15 @@
 
 ## Toolchain
 - [clang][]/[llvm][] 13
-- [CMake][] 3.19.8
+- [CMake][] 3.20.5
 - [ninja][] 1.10.2
 - [GNU Make][make] 4.2.1
 - [GNU Debugger][gdb] (gdb) with gdbserver 9.2
 - [rsync][] 3.1.3
 - [OpenSSH][] server 8.2p1
 - [Ubuntu 20.04 LTS (Focal Fossa)][Ubuntu]
+
+_Note_: CMake versions 3.21.* is not supported by CLion versions up to 2021.2.*.
 
 ## Usage
 1. Run service (container).

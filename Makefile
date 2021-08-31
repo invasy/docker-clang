@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 
 CLANG_VERSION := 13
-CMAKE_VERSION := 3.19.8
+CMAKE_VERSION := 3.20.5
 
 NAMESPACE := invasy
 IMAGE := clang-remote
