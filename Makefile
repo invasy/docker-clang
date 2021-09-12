@@ -11,7 +11,7 @@ PORT := 22001
 tag := $(NAMESPACE)/$(IMAGE):$(CLANG_VERSION)-cmake-$(CMAKE_VERSION)
 latest := $(NAMESPACE)/$(IMAGE):latest
 
-.PHONY: all build run push pull up down
+.PHONY: all build run login push pull up down
 all: up
 
 build: Dockerfile
@@ -24,7 +24,12 @@ run: build
 	@docker run --detach --cap-add=sys_ptrace --name="$(CONTAINER)" \
 		--publish="127.0.0.1:$(PORT):22" --restart=unless-stopped "$(latest)"
 
-push: build
+login:
+	@$(if $(DOCKER_USERNAME),,$(error DOCKER_USERNAME is undefined))\
+	$(if $(DOCKER_PASSWORD),,$(error DOCKER_PASSWORD is undefined))\
+	echo "$(DOCKER_PASSWORD)" | docker login --username="$(DOCKER_USERNAME)" --password-stdin $(DOCKER_REGISTRY)
+
+push: build login
 	@docker image push "$(tag)" && \
 	docker image push "$(latest)"
 

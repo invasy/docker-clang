@@ -4,6 +4,7 @@
 [![invasy/clang-remote @ GitLab][badge-gitlab]][gitlab]
 [![invasy/clang-remote @ Bitbucket][badge-bitbucket]][bitbucket]
 
+[![Build Status][badge-travis]][travis]
 [![Docker Automated Build Status][badge-build]][dockerhub]
 [![Docker Image Size (latest by date)][badge-size]][dockerhub]
 [![Docker Pulls][badge-pulls]][dockerhub]
@@ -18,7 +19,7 @@
 - [OpenSSH][] server 8.2p1
 - [Ubuntu 20.04 LTS (Focal Fossa)][Ubuntu]
 
-_Note_: CMake versions 3.21.* is not supported by CLion versions up to 2021.2.*.
+_Note_: CMake versions 3.21.* are not supported by CLion versions up to 2021.2.*.
 
 ## Usage
 1. Run service (container).
@@ -93,10 +94,12 @@ Password: `builder`
 [github]: https://github.com/invasy/clang-remote "invasy/clang-remote @ GitHub"
 [gitlab]: https://gitlab.com/invasy/clang-remote "invasy/clang-remote @ GitLab"
 [bitbucket]: https://bitbucket.org/invasy/clang-remote "invasy/clang-remote @ Bitbucket"
+[travis]: https://app.travis-ci.com/invasy/clang-remote "invasy/clang-remote @ Travis CI"
 [dockerhub]: https://hub.docker.com/r/invasy/clang-remote "invasy/clang-remote @ DockerHub"
 [badge-github]: https://img.shields.io/badge/GitHub-invasy%2Fclang--remote-informational?logo=github "invasy/clang-remote @ GitHub"
 [badge-gitlab]: https://img.shields.io/badge/GitLab-invasy%2Fclang--remote-informational?logo=gitlab "invasy/clang-remote @ GitLab"
 [badge-bitbucket]: https://img.shields.io/badge/Bitbucket-invasy%2Fclang--remote-informational?logo=bitbucket "invasy/clang-remote @ Bitbucket"
+[badge-travis]: https://app.travis-ci.com/invasy/clang-remote.svg?branch=master "invasy/clang-remote @ Travis CI"
 [badge-build]: https://img.shields.io/docker/cloud/build/invasy/clang-remote "Docker Automated Build Status"
 [badge-size]: https://img.shields.io/docker/image-size/invasy/clang-remote?sort=date "Docker Image Size (latest by date)"
 [badge-pulls]: https://img.shields.io/docker/pulls/invasy/clang-remote "Docker Pulls"
