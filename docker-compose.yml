@@ -5,8 +5,10 @@ services:
     build:
       context: .
     cap_add:
-    - sys_ptrace
+    - SYS_PTRACE
     container_name: clang_remote
+    hostname: clang
+    domainname: invasy.dev
     ports:
     - "127.0.0.1:22001:22"
     restart: unless-stopped
