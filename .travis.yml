@@ -1,6 +1,6 @@
+os: linux
 dist: focal
-language: minimal
-sudo: required
+language: shell
 services:
 - docker
 script:
