@@ -5,7 +5,7 @@ services:
     build:
       context: .
     cap_add:
-    - SYS_PTRACE
+    - SYS_ADMIN
     container_name: clang_remote
     hostname: clang
     domainname: invasy.dev

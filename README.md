@@ -28,7 +28,7 @@ _Note_: CMake versions 3.21.* are not supported by CLion versions up to 2021.2.*
 
 ### Run container
 ```bash
-docker run -d --cap-add=sys_ptrace --name=clang_remote -p 127.0.0.1:22001:22 invasy/clang-remote:latest
+docker run -d --cap-add=sys_admin --name=clang_remote -p 127.0.0.1:22001:22 invasy/clang-remote:latest
 ```
 or from git repository:
 ```bash
@@ -36,6 +36,7 @@ docker-compose up -d
 ```
 
 ### CLion Configuration
+#### Toolchains
 ![Toolchains](images/toolchains.png "Toolchains")
 
 - **Name**: `clang-remote`
@@ -46,6 +47,7 @@ docker-compose up -d
 - **C++ Compiler**: `/usr/bin/clang++-13` (_should be detected_)
 - **Debugger**: `/usr/bin/gdb` (_should be detected_)
 
+#### SSH Configurations
 ![SSH Configurations](images/ssh.png "SSH Configurations")
 
 - **Host**: `127.0.0.1`
@@ -54,6 +56,7 @@ docker-compose up -d
 - **User name**: `builder`
 - **Password**: `builder`
 
+#### CMake
 ![CMake](images/cmake.png "CMake")
 
 - **Profiles**:

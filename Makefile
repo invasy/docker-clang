@@ -8,20 +8,22 @@ IMAGE := clang-remote
 CONTAINER := clang_remote
 PORT := 22001
 
-tag := $(NAMESPACE)/$(IMAGE):$(CLANG_VERSION)-cmake-$(CMAKE_VERSION)
-latest := $(NAMESPACE)/$(IMAGE):latest
+image_name := $(NAMESPACE)/$(IMAGE)
+image_version := $(CLANG_VERSION)-cmake-$(CMAKE_VERSION)
+tag := $(image_name):$(image_version)
+latest := $(image_name):latest
 
-.PHONY: all build run login push pull up down
+.PHONY: all build run login push pull up down list clean
 all: up
 
 build: Dockerfile
-	@docker build \
+	@docker build $(if $(no_cache),--no-cache )\
 		--build-arg=CLANG_VERSION=$(CLANG_VERSION) \
 		--build-arg=CMAKE_VERSION=$(CMAKE_VERSION) \
 		--tag "$(tag)" --tag "$(latest)" .
 
 run: build
-	@docker run --detach --cap-add=sys_ptrace --name="$(CONTAINER)" \
+	@docker run --detach --cap-add=sys_admin --name="$(CONTAINER)" \
 		--publish="127.0.0.1:$(PORT):22" --restart=unless-stopped "$(latest)"
 
 login:
@@ -41,3 +43,11 @@ up: docker-compose.yml
 
 down: docker-compose.yml
 	@docker-compose down
+
+list:
+	@-docker container ls -f name=$(CONTAINER)
+	@-docker image ls $(image_name)
+
+clean:
+	@-docker container rm $$(docker container ls -q -f name=$(CONTAINER))
+	@-docker image rm $$(docker image ls -q $(image_name))
