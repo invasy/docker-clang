@@ -13,7 +13,7 @@ image_version := $(CLANG_VERSION)-cmake-$(CMAKE_VERSION)
 tag := $(image_name):$(image_version)
 latest := $(image_name):latest
 
-.PHONY: all build run login push pull up down list clean
+.PHONY: all build run login push pull up down shell root list clean
 all: up
 
 build: Dockerfile
@@ -43,6 +43,12 @@ up: docker-compose.yml
 
 down: docker-compose.yml
 	@docker-compose down
+
+shell:
+	@docker exec --interactive --tty --user builder --workdir /home/builder $(CONTAINER) /bin/bash
+
+root:
+	@docker exec --interactive --tty --workdir /root $(CONTAINER) /bin/bash
 
 list:
 	@-docker container ls -f name=$(CONTAINER)
