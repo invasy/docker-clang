@@ -1,13 +1,6 @@
 # Remote Development Environment for CLion
 
-[![invasy/clang-remote @ GitHub][badge-github]][github]
-[![invasy/clang-remote @ GitLab][badge-gitlab]][gitlab]
-[![invasy/clang-remote @ Bitbucket][badge-bitbucket]][bitbucket]
-
-[![Build Status][badge-travis]][travis]
-[![Docker Automated Build Status][badge-build]][dockerhub]
-[![Docker Image Size (latest by date)][badge-size]][dockerhub]
-[![Docker Pulls][badge-pulls]][dockerhub]
+> ***Warning***: Development continues in [`invasy/dev-env`](https://github.com/invasy/dev-env "invasy/dev-env") repository.
 
 ## Toolchain
 - [clang][]/[llvm][] 13
